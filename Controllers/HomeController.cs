@@ -18,6 +18,7 @@ public class HomeController : Controller
         var list = new List <StudentVm>{
             new StudentVm(){id=1,Name="one",address="addr1"},
              new StudentVm(){id=2,Name="two",address="addr2"}
+            //  commnt
         };
 
         return View (list);
