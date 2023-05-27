@@ -2,7 +2,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//adding start
+var connectionString = builder.Configuration.GetConnectionString("DefaultCOnnection");
+builder.Services.AddDbContext<AppDbContext>(options =>
+option.UseNpgsql(connectionString));
 
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+//end here
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
